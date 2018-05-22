@@ -2,11 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lenovo.lab7"
     android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
-    <uses-permission android:name="android.permission.VIBRATE" >
-    </uses-permission>
+
+    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,15 +21,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <receiver android:name=".MyReceiver">
-
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED">
-                </action>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
             </intent-filter>
-
         </receiver>
-        <receiver android:name=".MyReceiverAlarm">
-        </receiver>
+        <receiver android:name=".MyReceiverAlarm"></receiver>
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -33,7 +34,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Alarm_Cell"
+            android:label="@string/title_activity_alarm__cell"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
 
 </manifest>

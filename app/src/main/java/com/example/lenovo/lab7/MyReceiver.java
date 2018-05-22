@@ -19,7 +19,8 @@ public class MyReceiver extends BroadcastReceiver {
         Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         vibrator.vibrate(2000);
 
-        Intent intent = new Intent(context,alarm.class);
+        Intent intent = new Intent(context,Alarm_Cell.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
 
     }
