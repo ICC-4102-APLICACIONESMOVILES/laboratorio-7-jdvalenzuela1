@@ -20,7 +20,7 @@ public class MyReceiver extends BroadcastReceiver {
         vibrator.vibrate(2000);
 
         Intent intent = new Intent(context,alarm.class);
-        context.startService(intent);
+        context.startActivity(intent);
 
     }
 }
